@@ -3,6 +3,8 @@ import Navbar from "./components/Navbar";
 // import State from "./components/State";
 import TextForm from "./components/Textform";
 import "./App.css";
+import { useState } from "react";
+
 let obj = {
   head1 : 'heading1',
   head2 : 'heading2',
@@ -11,11 +13,26 @@ let obj = {
   text2 : 'para2 ',
   text3 : 'para 3 '
 };
+
 function App() {
+  const [mode,changeMode] = useState('light');
+  const toggleMode= ()=>{
+    console.log("called");
+    if(mode==="dark")
+    {
+      changeMode('light');
+      document.body.style.backgroundColor='white';
+    }
+    else{
+      changeMode('dark');
+      document.body.style.backgroundColor='black';
+    }
+
+  }
   return (
   <>
-<Navbar  head="Home"  about = "About"/>
-<TextForm/>
+<Navbar  mode={mode} head="Home"  about = "About" toggle={toggleMode} />
+<TextForm mode={mode} />
  </>
   );
 }
