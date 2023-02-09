@@ -60,7 +60,7 @@ export default function Textform(props) {
   <div className={`container my-4 text-${props.mode==="dark"?"white":"dark"}`}>
   <h1>Text Formater{str} </h1>
   <div className="form-outline">
-    <textarea className={`form-control text-${props.mode==="dark"?"white":"dark"}`} id="textAreaExample1" rows="8" value={text} onChange={updateText}></textarea>
+    <textarea className={`form-control text-dark`} id="textAreaExample1" rows="8" value={text} onChange={updateText}></textarea>
     <button type="button" className="btn btn-danger my-4 mx-3" onClick={clear}>
       Clear
     </button>
